@@ -79,7 +79,12 @@ fetch("https://localhost:5001/vehiculos/vehiculos",{
     headers: {"Content-type": "application/json"},
     })
     .then(response => {
-         return response.json();
+        if(response.status === 200){
+            return response.json();
+        }
+        else{
+            alert(`No se ha podido realizar la operación!`)
+        }
     })
     .then(data => {
         arrayVehiculos = arrayObjetosToVehiculos(data);
