@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>2do Parcial - Vera Sotelo, Mercedes</title>
+</head>
+<body> 
+    <div id="spinner">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+            <feBlend in="SourceGraphic" in2="goo"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+      <div class="blob blob-0"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+      <div class="blob blob-5"></div>
+    </div>
+
+    <div id="formularioLista">
+      <h1>Formulario lista</h1>
+      <table id="tabla">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Fabricante</th>
+                  <th>Modelo</th>
+                  <th>Año de lanzamiento</th>
+                  <th>Cantidad de puertas</th>
+                  <th>Transmisión 4x4</th>
+                  <th>Modificar</th>
+                  <th>Eliminar</th>
+              </tr>
+          </thead>
+          <tbody id="tablaBody"></tbody>
+      </table>
+      <input type="button" id="agregarButton" value="Agregar elemento"></input>
+    </div>
+
+    <div id="formContainer">
+      <h1 id="encabezadoForm"></h1>
+        <form id="formVehiculos">
+          <select id="selectTipo">
+              <option value="nuevoAuto">Auto</option>
+              <option value="nuevaCamioneta">Camioneta</option>
+          </select>
+          <label for="inputId">ID</label>
+          <input id="inputId" type="number" required readonly='readonly'>
+          <label for="inputFabricante">Fabricante</label>
+          <input id="inputFabricante" type="text" required>
+          <div id="validacionFabricante" name="errorValidacion"></div>
+          <label for="inputModelo">Modelo</label>
+          <input id="inputModelo" type="text" required>
+          <label for="inputAnio">Año de lanzamiento</label>
+          <input id="inputAnio" type="number" required>
+          <div id="validacionAnio" name="errorValidacion"></div>
+          <label id="labelCantPuertas" for="inputCantPuertas">Cantidad de puertas</label>
+          <input id="inputCantPuertas" type="number">
+          <div id="validacionCantPuertas" name="errorValidacion"></div>
+          <label id="labelTransmision" for="inputTransmision">Transmisión 4x4</label>
+          <input id="inputTransmision" type="text">
+          <div id="validacionTransmision" name="errorValidacion"></div>
+          <div id="botones">
+              <input type="button" id="cancelarButton" value="Cancelar"></input>
+              <input type="submit" id="aceptarButton" value="Aceptar"></input>
+          </div>
+      </form>
+    </div>
+
+  </body>
+</html>
+<script src="scripts.js"></script>
